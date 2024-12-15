@@ -6,14 +6,13 @@ import { QRCodeSVG } from "qrcode.react"; // QRCode
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { formatCurrency } from "@/lib/utils";
+
 import ProductList from "@/components/ProductList";
 import SelectedProducts from "@/components/SelectedProducts";
 import { SelectProduct } from "@/lib/slugProducts";
 
 export default function CheckoutPage() {
   const [selectedProducts, setSelectedProducts] = useState<SelectProduct[]>([]);
-  const [paymentMethod, setPaymentMethod] = useState("credit-card");
 
   const handleSelectProduct = (product: SelectProduct) => {
     setSelectedProducts([...selectedProducts, product]);
